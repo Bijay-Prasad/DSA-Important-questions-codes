@@ -103,8 +103,8 @@ vector<int> leftView(Node *root)
             q.pop();
             if(i == size-1) ans.push_back(temp->data);
             
-            if(temp->right) q.push(temp->right);   
             if(temp->left) q.push(temp->left);
+            if(temp->right) q.push(temp->right);   
         }
     }
     return ans;
@@ -227,7 +227,7 @@ struct Node
  */
 
 //Function to return a list containing elements of left view of the binary tree.
-vector<int> leftView(Node *root)
+vector<int> rightView(Node *root)
 {
     vector<int> ans;
     if(!root) return ans;
@@ -240,8 +240,8 @@ vector<int> leftView(Node *root)
             q.pop();
             if(i == size-1) ans.push_back(temp->data);
             
-            if(temp->left) q.push(temp->left);
             if(temp->right) q.push(temp->right);   
+            if(temp->left) q.push(temp->left);
         }
     }
     return ans;

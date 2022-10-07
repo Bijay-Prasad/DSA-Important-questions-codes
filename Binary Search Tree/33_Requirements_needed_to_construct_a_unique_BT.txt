@@ -1,0 +1,59 @@
+Topic: Requirements needed to construct a unique Binary Tree
+
+Q) Can You Contruct a Unique Binary tree with following?
+
+
+
+(a) Preorder & Postorder [Answer -> NO]
+Explanation: 
+lets take an example:
+Preorder -> 1 2 3 [Root, Left, Right]
+Postorder -> 3 2 1 [Left, Right, Root]
+
+            1                           1
+          /                           /  
+        2                           2
+      /                               \
+    3                                   3
+Preorder -> 1 2 3                 Preorder -> 1 2 3
+Postorder -> 3 2 1                Postorder -> 3 2 1
+
+Now, You tell, is it Unique tree? Obviously No...
+
+
+
+
+(b) Inorder & Preorder [Answer -> YES]
+Explanation: 
+lets take an example:
+Inorder -> [9 3 15 20 7] [Left, Root, Right]
+Preorder -> [3 9 20 15 7] [Root, Left, Right]
+
+so, 3 is the root node according to Preorder Traversing and 9 is the left subtree of the tree and [15 20 7] are the right subtree of the tree according to Inorder Traversing.
+
+                        3
+                      /   \     
+                    9       (15, 20, 7)
+
+now, 9 is our root node according Preorder Traversing but root dont have its left in Inorder so we'll skip 9.
+then 20 is our root noode and its left subtree will be 15 and right subtree will be 7 by Inorder Traversing.
+
+                        3
+                      /    \
+                    9       20
+                          /    \
+                        15      7
+
+Now, Is it Unique? Yesssss...
+
+
+
+(c) Inorder & Postorder [Answer -> YES]
+Explanation: [Same as (b)]
+
+
+
+SUMMARY :------------------
+**We Can make a Binary Tree using any traversal technique but these will not be unique Binary Tree.**
+
+***For Unique Binary tree we need a Inorder(Mandatory)***
